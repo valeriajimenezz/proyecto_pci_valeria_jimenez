@@ -44,8 +44,7 @@ if datos is not None:
     kWh_renovable = datos["indicador_energia"] * \
         (datos["indicador_renovable"] / 100)
     kWh_no_renovable = datos["indicador_energia"] - kWh_renovable
-
-    # Aquí deberías pedir los factores de emisión como input o cargarlos de una base de datos
+    
     factor_emision_energia_no_renovable = float(
         input("Ingrese el factor de emisión de energía no renovable (kg CO2/kWh): "))
     factor_emision_combustibles = float(
@@ -74,6 +73,7 @@ if datos is not None:
         "total (ton CO2)": emisiones_totales_ton
     }
 
-    print("\n--- Desglose de emisiones por fuente ---")
+    print("\n Desglose de emisiones por fuente ")
     for fuente, valor in desglose.items():
         print(f"{fuente}: {valor:.2f}")
+
